@@ -23,14 +23,8 @@ public class Activity2 extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(Activity2.this, "Botón Presionado 2",
                         Toast.LENGTH_SHORT).show();
-                onIntents2();
             }
         });
-    }
-
-    public void onIntents2(){
-        Intent cambio = new Intent(this, MainActivity.class);
-        startActivity(cambio);
     }
 
     @Override
