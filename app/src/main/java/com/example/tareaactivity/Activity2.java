@@ -9,68 +9,67 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-    private String etiqueta = MainActivity.class.getSimpleName();
+public class Activity2 extends AppCompatActivity {
+    private String etiqueta = Activity2.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Log.d(etiqueta,"onCreate");
+        setContentView(R.layout.activity_2);
 
-        Button boton = findViewById(R.id.button);
-
-        boton.setOnClickListener(new View.OnClickListener() {
+        Button boton2 = findViewById(R.id.button2);
+        boton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Botón Presionado",
+                Toast.makeText(Activity2.this, "Botón Presionado 2",
                         Toast.LENGTH_SHORT).show();
-                onIntents();
+                onIntents2();
             }
         });
     }
 
-    public void onIntents(){
-        Intent cambio = new Intent(this, Activity2.class);
+    public void onIntents2(){
+        Intent cambio = new Intent(this, MainActivity.class);
         startActivity(cambio);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(etiqueta,"onStart");
+        Toast.makeText(this, "APP Iniciado 2", Toast.LENGTH_SHORT).show();
+        Log.d(etiqueta,"onStart2");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(etiqueta,"onPause");
+        Log.d(etiqueta,"onPause2");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Toast.makeText(this, "APP Detenido", Toast.LENGTH_SHORT).show();
-        Log.d(etiqueta,"onStop");
+        Toast.makeText(this, "APP Detenido 2", Toast.LENGTH_SHORT).show();
+        Log.d(etiqueta,"onStop2");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Toast.makeText(this, "APP Reiniciado", Toast.LENGTH_SHORT).show();
-        Log.d(etiqueta,"onRestart");
+        Toast.makeText(this, "APP Reiniciado 2", Toast.LENGTH_SHORT).show();
+        Log.d(etiqueta,"onRestart2");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(this, "APP Cerrado", Toast.LENGTH_SHORT).show();
-        Log.d(etiqueta,"onDestroy");
+        Toast.makeText(this, "APP Cerrado 2", Toast.LENGTH_SHORT).show();
+        Log.d(etiqueta,"onDestroy2");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(etiqueta,"onResume");
+        Log.d(etiqueta,"onResume2");
     }
 }
